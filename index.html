@@ -95,8 +95,9 @@
                 document.querySelector(".no").innerText = "Maybe you're mistaken, the \"Yes\" button is right there to my left";
             } else if (clickCountNo === 4) {
                 document.querySelector(".no").style.display = "none";
-                document.querySelector(".yes").style.display = "flex";
-                document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
+                document.querySelector(".yes").style.transform = "scale(1)";
+                document.querySelector(".yes").style.display = "block";
+                document.querySelector(".yes").style.margin = "0 auto"; // Re-centering "Yes" button
             }
             if (clickCountYes > 0) {
                 document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
