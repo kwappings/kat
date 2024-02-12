@@ -37,19 +37,11 @@
             height: auto;
             margin-bottom: 20px;
         }
-        .valentine-text {
-            font-family: cursive;
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <img id="placeholder" src="1.jpg" alt="Placeholder Image">
-        <div class="valentine-text">
-            Will you be my Valentine?
-        </div>
         <div>
             <button class="button yes" onclick="changeYes()">Yes</button>
             <button class="button no" onclick="changeNo()">No</button>
@@ -75,11 +67,11 @@
                 document.getElementById("placeholder").src = "5.jpg";
                 document.querySelector(".yes").style.display = "none";
                 document.querySelector(".no").style.display = "none";
-                document.querySelector(".valentine-text").style.display = "none"; // Remove "Will you be my Valentine?" text
             }
             document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
             if (clickCountNo > 0) {
-                document.querySelector(".no").style.transform = "scale(0." + (10 - clickCountNo) + ")";
+                document.querySelector(".no").style.transform = "scale(1)";
+                clickCountNo = 0;
             }
         }
 
@@ -94,15 +86,17 @@
             } else if (clickCountNo === 3) {
                 document.getElementById("placeholder").src = "8.jpg";
                 document.querySelector(".no").innerText = "Maybe you're mistaken, the \"Yes\" button is right there to my left";
+                document.querySelector(".no").style.transform = "scale(0.9)";
+                document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
             } else if (clickCountNo === 4) {
+                document.querySelector(".no").style.transform = "scale(0." + (10 - clickCountNo) + ")";
+                document.querySelector(".no").innerText = "No";
+            } else if (clickCountNo === 5) {
                 document.querySelector(".no").style.display = "none";
-                document.querySelector(".yes").style.transform = "scale(1)";
-                document.querySelector(".yes").style.display = "block";
-                document.querySelector(".yes").style.margin = "0 auto"; // Re-centering "Yes" button
-            }
-            if (clickCountYes > 0) {
+                document.querySelector(".yes").style.display = "flex";
                 document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
             }
+            document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
         }
     </script>
 </body>
