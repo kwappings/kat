@@ -11,7 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffb8eb; /* Background color change */
+            background-color: #ffb8eb;
         }
         .container {
             text-align: center;
@@ -20,36 +20,52 @@
             padding: 10px 20px;
             font-size: 18px;
             margin: 10px;
-            border-radius: 20px; /* Rounded corners */
-            cursor: pointer; /* Add cursor pointer on hover */
+            border-radius: 20px;
+            cursor: pointer;
         }
         .button.yes {
-            background-color: #a3f0c2; /* Yes button color */
-            border: none; /* Remove button border */
+            background-color: #a3f0c2;
+            border: none;
         }
         .button.no {
-            background-color: #ed6676; /* No button color */
-            border: none; /* Remove button border */
+            background-color: #ed6676;
+            border: none;
         }
         img {
-            width: 200px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
+            width: 200px;
+            height: auto;
             margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="placeholder-image.jpg" alt="Placeholder Image">
+        <img id="placeholder" src="1.jpg" alt="Placeholder Image">
         <div>
-            <button class="button yes" onclick="yesClicked()">Yes</button>
+            <button class="button yes" onclick="changeYes()">Yes</button>
             <button class="button no" onclick="noClicked()">No</button>
         </div>
     </div>
 
     <script>
-        function yesClicked() {
-            alert("Yes button clicked!");
+        let clickCount = 0;
+
+        function changeYes() {
+            clickCount++;
+            if (clickCount === 1) {
+                document.getElementById("placeholder").src = "2.jpg";
+                document.querySelector(".yes").innerText = "Really?";
+            } else if (clickCount === 2) {
+                document.getElementById("placeholder").src = "3.jpg";
+                document.querySelector(".yes").innerText = "No way..";
+            } else if (clickCount === 3) {
+                document.getElementById("placeholder").src = "4.jpg";
+                document.querySelector(".yes").innerText = "One last time.. Are you sure?";
+            } else {
+                document.getElementById("placeholder").src = "5.jpg";
+                document.querySelector(".yes").style.display = "none";
+                document.querySelector(".no").style.display = "none";
+            }
         }
 
         function noClicked() {
