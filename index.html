@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin: 10px;
+        }
+        img {
+            width: 200px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="placeholder-image.jpg" alt="Placeholder Image">
+        <div>
+            <button class="button" onclick="yesClicked()">Yes</button>
+            <button class="button" onclick="noClicked()">No</button>
+        </div>
+    </div>
+
+    <script>
+        function yesClicked() {
+            alert("Yes button clicked!");
+        }
+
+        function noClicked() {
+            alert("No button clicked!");
+        }
+    </script>
+</body>
+</html>
