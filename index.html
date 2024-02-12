@@ -11,6 +11,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #ffb8eb; /* Background color change */
         }
         .container {
             text-align: center;
@@ -19,6 +20,16 @@
             padding: 10px 20px;
             font-size: 18px;
             margin: 10px;
+            border-radius: 20px; /* Rounded corners */
+            cursor: pointer; /* Add cursor pointer on hover */
+        }
+        .button.yes {
+            background-color: #a3f0c2; /* Yes button color */
+            border: none; /* Remove button border */
+        }
+        .button.no {
+            background-color: #ed6676; /* No button color */
+            border: none; /* Remove button border */
         }
         img {
             width: 200px; /* Adjust the width as needed */
@@ -31,8 +42,8 @@
     <div class="container">
         <img src="placeholder-image.jpg" alt="Placeholder Image">
         <div>
-            <button class="button" onclick="yesClicked()">Yes</button>
-            <button class="button" onclick="noClicked()">No</button>
+            <button class="button yes" onclick="yesClicked()">Yes</button>
+            <button class="button no" onclick="noClicked()">No</button>
         </div>
     </div>
 
