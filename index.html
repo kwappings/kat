@@ -43,11 +43,19 @@
             bottom: 20px;
             right: 20px;
         }
+        .valentine-text {
+            font-family: cursive;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <img id="placeholder" src="1.jpg" alt="Placeholder Image">
+        <div class="valentine-text">
+            Will you be my Valentine?
+        </div>
         <div>
             <button class="button yes" onclick="changeYes()">Yes</button>
             <button class="button no" onclick="changeNo()">No</button>
@@ -77,6 +85,7 @@
                 document.getElementById("placeholder").src = "5.jpg";
                 document.querySelector(".yes").style.display = "none";
                 document.querySelector(".no").style.display = "none";
+                document.querySelector(".valentine-text").style.display = "none"; // Remove "Will you be my Valentine?" text
             }
             document.querySelector(".yes").style.transform = "scale(1." + (5 + clickCountYes) + ")";
             if (clickCountNo > 0) {
